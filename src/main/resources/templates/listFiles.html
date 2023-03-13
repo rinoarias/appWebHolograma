@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head th:replace="layout/layout :: head">
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+</head>
+<body>
+<main class="flex-shrink-0" layout:fragment="page-content">
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+
+      <h1 class="mt-5">Clase interactiva con hologramas</h1>
+      <p class="lead">A continuación, se mostrarán las opciones disponibles del proyecto</p>
+
+      <div class=" row row-cols-1 row-cols-sm-2 row-cols-md-3 g-6">
+
+        <!-- Album -->
+        <!-- Inicio Album -->
+        <a th:each="categoria : ${categorias}" th:href="@{/categoria/{id}(id=${categoria.id})}" class="col btn">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <img th:src="@{/images/media-player-img.png}"
+                   alt="Imagen" width="150px" height="150px" title="Titulo de prueba">
+              <p class="h3 card-text" th:text="${categoria.nombreCategoria}">
+                Cat
+              </p>
+            </div>
+          </div>
+        </a>
+        <!-- Fin Album -->
+
+      </div>
+    </div>
+  </div>
+</main>
+<th:block layout:fragment="page-scripts">
+
+</th:block>
+</body>
+</html>

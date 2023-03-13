@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head th:replace="layout/layout :: head">
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+<main class="flex-shrink-0" layout:fragment="page-content">
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+
+            <h1 class="mt-5">Reproductor de archivos</h1>
+            <p class="lead">Reproductor de archivos para la clase interactiva</p>
+
+            <a th:href="@{/listFiles}" target="_blank">Mostrar archivos</a>
+
+            <table th:if="${not #lists.isEmpty(imagenes)}" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Nombre Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="archivo, contador : ${imagenes}">
+                    <td th:text="${contador.index + 1}"></td>
+                    <td th:text="${archivo.getNombreImagen()}"></td>
+                    <td><a th:href="@{'/playVideo/' + ${archivo.getId()}}">Reproducir archivo</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p th:if="${#lists.isEmpty(imagenes)}">No se encontraron archivos</p>
+
+        </div>
+    </div>
+</main>
+<th:block layout:fragment="page-scripts">
+
+</th:block>
+</body>
+</html>

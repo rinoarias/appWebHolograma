@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link th:href="@{../../libs/bootstrap-5.3.0/css/bootstrap.min.css}" rel="stylesheet">
+    <script th:src="@{../../static/libs/bootstrap-5.3.0/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Clase interactiva con holograma</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/player}">Reproductor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/listFiles}">Listar imágenes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Procesar imágenes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Acerca del proyecto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0" layout:fragment="page-content">
+
+</main>
+
+<footer class="text-muted py-5">
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="/">Volver al inicio</a>
+        </p>
+        <p class="mb-1">Este proyecto AppWebHolograma &copy; ha sido desarrollado bajo la tutela del PhD. Ing. Gleiston Guerrero</p>
+        <p class="mb-0">Un proyecto desarrollado por los estudiantes de Ingeniería Telemática e Ingeniería en Software de la <a href="www.uteq.edu.ec">Universidad Técnica Estatal de Quevedo</a>.</p>
+    </div>
+</footer>
+<th:block layout:fragment="page-scripts">
+
+</th:block>
+</body>
+</html>

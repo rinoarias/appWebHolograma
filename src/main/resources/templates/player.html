@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head th:replace="layout/layout :: head">
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+<main class="flex-shrink-0" layout:fragment="page-content">
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <p class="mt-1 - 1h5">Reproductor de archivos para la clase interactiva</p>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-6">
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/imagenAnterior}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/play_last.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Anterior
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/play}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/play.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Play
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/siguienteImagen}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/play_next.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Siguiente
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/playLoopMode}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/loop.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Repetir
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/pause}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/pause.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Pausar
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/playSingleVideoModel}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/list.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Reproducción normal
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/bajarBrillo}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/light_down.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Bajar Brillo
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a th:href="@{/subirBrillo}" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img th:src="@{/images/player/light_up.png}"
+                                 alt="Imagen" width="75px" height="75px" title="Titulo de prueba">
+                            <p class="h5 card-text">
+                                Subir brillo
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+                <!-- Album -->
+                <!-- Inicio Album -->
+                <a href="#" class="col btn">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <form th:action="@{/playVideo}" method="post" class="form-control">
+                                <label for="inNumVideo">Ingrese un número</label>
+                                <input type="text" name="numVideo" id="inNumVideo" class="form-control">
+                                <input type="submit" value="Seleccionar video" class="btn btn-success">
+                            </form>
+                        </div>
+                    </div>
+                </a>
+                <!-- Fin Album -->
+
+
+            </div>
+        </div>
+    </div>
+
+</main>
+<th:block layout:fragment="page-scripts">
+
+</th:block>
+</body>
+</html>
